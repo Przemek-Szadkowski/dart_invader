@@ -151,7 +151,7 @@ aside .history {
 }
 
 main {
-  background-image: url(./img/small.jpg);
+  background-image: url(../img/small.jpg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
