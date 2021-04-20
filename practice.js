@@ -4,14 +4,17 @@ class Practice {
         this.points = 0;
     }
 
-    startTimer() {
+    startTimer(element) {
         let time = this.practiceTime;
         const practiceTimer = setInterval(() => {
             time -= 1;
             console.log(time);
+            const minutes = Math.floor(time / 60);
+            const seconds = time % 60;
+            console.log(minutes, seconds);
+            element.innerHTML = `${minutes >= 10 ? minutes : '0' +  minutes}:${seconds >= 10 ? seconds : '0' + seconds}`;
         }, 1000)
     }
-    // i teraz razy 60 i do tego sekundy i przenieść to na element p do DOMU
 }
 
 export default Practice;

@@ -19,7 +19,7 @@ body {
   height: 100vh;
   width: 100%;
   max-width: 500px;
-  min-width: 430px;
+  min-width: 230px;
   display: grid;
   grid-template-rows: 2fr 1fr 30px;
   background-color: black;
@@ -80,12 +80,12 @@ aside p {
 aside .controllers {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  padding-bottom: 50px;
+  padding-bottom: 25px;
 }
 
 aside .controllers button {
-  width: 4.5em;
-  height: 4.5em;
+  width: 10vh;
+  height: 10vh;
   margin: 0 10px;
 }
 
@@ -93,6 +93,10 @@ aside .controllers button {
   background-color: #222;
   color: #ddd;
   transition: .5s;
+}
+
+#start:disabled {
+  opacity: .2;
 }
 
 #start:focus, #pause:focus {
@@ -120,8 +124,8 @@ aside .history {
 }
 
 .history button {
-  width: 90px;
-  height: 25px;
+  width: 12vh;
+  height: 4vh;
   background: #000;
   text-transform: uppercase;
   border: 3px solid #999;
@@ -168,9 +172,9 @@ main {
 
 .buttons button {
   position: relative;
-  width: 5em;
-  height: 5em;
-  margin: 15px 20px;
+  width: 10vh;
+  height: 10vh;
+  margin: 10px 15px;
   font-size: 1.5rem;
   /* box-shadow: 0 0 6px white; */
   background-image: radial-gradient(#000, #111);
@@ -209,8 +213,8 @@ main {
 }
 
 .buttons button.score::before {
-  width: 3.5em;
-  height: 3.5em;
+  width: 7vh;
+  height: 7vh;
 }
 
 .buttons button:nth-child(4)::before {

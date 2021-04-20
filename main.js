@@ -2,6 +2,7 @@ import Practice from './practice.js';
 
 const green_buttons = document.querySelectorAll('.dart');
 const timer = document.getElementById('timer');
+const start_button = document.getElementById('start');
 // add score class to darts button
 
 green_buttons.forEach(element => {
@@ -14,7 +15,10 @@ green_buttons.forEach(element => {
     })
 });
 
-// timer
 
 const practice = new Practice();
-practice.startTimer();
+
+start_button.addEventListener('click', () => {
+    practice.startTimer(timer);
+    start_button.disabled = true;
+});
