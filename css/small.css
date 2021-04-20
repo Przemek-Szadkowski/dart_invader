@@ -30,7 +30,7 @@ body {
   grid-column-start: 1;
   grid-column-end: 3;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 2fr 1fr;
   justify-self: center;
 }
 
@@ -133,12 +133,12 @@ aside .history {
 
 #reset_button {
   background-color: #D15E2B;;
-  color: #333;
+  color: #222;
 }
 
 #history_button {
   background-color: #28B741;
-  color: #ddd;
+  color: #222;
 }
 
 .history button:hover{
@@ -206,6 +206,11 @@ main {
   border-radius: 50%;
   z-index: 1;
   transition: .3s;
+}
+
+.buttons button.score::before {
+  width: 3.5em;
+  height: 3.5em;
 }
 
 .buttons button:nth-child(4)::before {
