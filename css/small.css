@@ -90,7 +90,7 @@ aside .controllers button {
 }
 
 #start, #pause {
-  background-color: #222;
+  background-color: #111;
   color: #ddd;
   transition: .5s;
 }
@@ -128,25 +128,26 @@ aside .history {
 }
 
 .history button {
-  width: 12vh;
+  width: 18vh;
   height: 4vh;
   background: #000;
   text-transform: uppercase;
-  border: 3px solid #999;
-  box-shadow: 3px 3px 1px #777;
+  border: 3px solid #ccc;
   transition: .5s;
   color: #28B741;
-  border-radius: 5%;
+  border-radius: 6%;
 }
 
 #reset_button {
-  background-color: #D15E2B;;
+  background-color: #D15E2B;
   color: #222;
+  box-shadow: 0 0 10px #D15E2B;
 }
 
 #history_button {
   background-color: #28B741;
   color: #222;
+  box-shadow: 0 0 10px #28B741;
 }
 
 .history button:hover{
@@ -180,9 +181,17 @@ main {
   height: 10vh;
   margin: 10px 15px;
   font-size: 1.5rem;
-  /* box-shadow: 0 0 6px white; */
   background-image: radial-gradient(#000, #111);
   color: white;
+  border-style: none;
+}
+
+.buttons button.green {
+  box-shadow: 0 0 10px #28B741;
+}
+
+.buttons button.red {
+  box-shadow: 0 0 10px #D15E2B;
 }
 
 .buttons button:focus {
@@ -219,18 +228,12 @@ main {
 .buttons button.score::before {
   width: 7vh;
   height: 7vh;
+  box-shadow: 0 0 5px #28B741;
 }
 
-.buttons button:nth-child(4)::before {
+.buttons button:nth-child(4)::before, .buttons button:nth-child(5)::before, .buttons button:nth-child(6)::before {
   background-image: radial-gradient(#D15E2B, #000);
-}
-
-.buttons button:nth-child(5)::before {
-  background-image: radial-gradient(#D15E2B, #000);
-}
-
-.buttons button:nth-child(6)::before {
-  background-image: radial-gradient(#D15E2B, #000);
+  box-shadow: 0 0 5px #D15E2B;
 }
 
 footer {
