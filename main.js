@@ -8,19 +8,49 @@ const resetButton = document.getElementById('reset_button');
 
 const practice = new Practice();
 
-// add score class to darts button - START
 
 greenButtons.forEach(element => {
     element.addEventListener('click', (e) => {
+        
+        // add score class to darts button - START
+        let greenButton;
+        let redButton;
+
         const sameClassButtons = document.querySelectorAll(`.${e.target.classList[0]}`); // finding the same class button and prevent adding score class to two buttons from group
         sameClassButtons.forEach(el => {
             el.classList.remove('score');
+            if(el.classList.contains('green')) {
+                greenButton = el;
+                console.log(greenButton)
+            }
+            if(el.classList.contains('red')) {
+                redButton = el;
+                console.log(redButton);
+            }
         })
         element.classList.add('score');
+
+        // add score class to darts button - END
+
+        // this block allow to change mark green button to red button and subtracts point during this change
+        if(e.target.classList.contains('green')) {
+            practice.addPoint();
+            greenButton.disabled = true;
+            redButton.disabled = false;
+            console.log(practice.points);
+        } else {
+            // if green button was checked in the same round, red buttton substracts point from practice.points
+            if(greenButton.disabled === true) {
+                practice.subtractPoint();
+                console.log(practice.points);
+            }
+            redButton.disabled = true;
+            greenButton.disabled = false;
+            console.log(practice.points);
+        }
+
     })
 });
-
-// add score class to darts button - END
 
 startButton.addEventListener('click', () => {
     practice.isTimerPaused = false;

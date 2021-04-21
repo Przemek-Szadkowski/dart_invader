@@ -31,6 +31,14 @@ class Practice {
         this.isTimerPaused = false;
         clearInterval(this.practiceTimer);    
     }
+
+    addPoint() {
+        this.points++;
+    }
+
+    subtractPoint() {
+        this.points--;
+    }
 }
 
 export default Practice;
