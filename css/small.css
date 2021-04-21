@@ -95,7 +95,7 @@ aside .controllers button {
   transition: .5s;
 }
 
-#start:disabled {
+#start:disabled, #pause:disabled {
   opacity: .2;
 }
 

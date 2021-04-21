@@ -1,11 +1,16 @@
 import Practice from './practice.js';
 
-const green_buttons = document.querySelectorAll('.dart');
+const greenButtons = document.querySelectorAll('.dart');
 const timer = document.getElementById('timer');
-const start_button = document.getElementById('start');
-// add score class to darts button
+const startButton = document.getElementById('start');
+const pauseButton = document.getElementById('pause');
+const resetButton = document.getElementById('reset_button');
 
-green_buttons.forEach(element => {
+const practice = new Practice();
+
+// add score class to darts button - START
+
+greenButtons.forEach(element => {
     element.addEventListener('click', (e) => {
         const sameClassButtons = document.querySelectorAll(`.${e.target.classList[0]}`); // finding the same class button and prevent adding score class to two buttons from group
         sameClassButtons.forEach(el => {
@@ -15,10 +20,26 @@ green_buttons.forEach(element => {
     })
 });
 
+// add score class to darts button - END
 
-const practice = new Practice();
-
-start_button.addEventListener('click', () => {
+startButton.addEventListener('click', () => {
+    practice.isTimerPaused = false;
     practice.startTimer(timer);
-    start_button.disabled = true;
+    startButton.disabled = true;
+    setTimeout(() => {
+        pauseButton.disabled = false;
+    }, 1000);
 });
+
+pauseButton.addEventListener('click', () => {
+    practice.pauseTimer();
+    startButton.disabled = false;
+    pauseButton.disabled = true;
+})
+
+resetButton.addEventListener('click', () => {
+    practice.resetPractice();
+    startButton.disabled = false;
+    pauseButton.disabled = false;
+    timer.innerHTML = '30:00';
+})
