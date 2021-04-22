@@ -3,7 +3,7 @@ class Practice {
         this.practiceTime = 1800;
         this.points = 0;
         this.isTimerPaused = false;
-        this.practiceTimer;
+        this.practiceTimer = 0;
     }
 
     startTimer(element) {
@@ -29,7 +29,8 @@ class Practice {
         this.practiceTime = 1800;
         this.points = 0;
         this.isTimerPaused = false;
-        clearInterval(this.practiceTimer);    
+        clearInterval(this.practiceTimer);
+        this.practiceTimer = 0;
     }
 
     addPoint() {

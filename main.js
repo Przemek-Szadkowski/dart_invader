@@ -33,28 +33,37 @@ greenButtons.forEach(element => {
         // add score class to darts button - END
 
         // this block allow to change mark green button to red button and subtracts point during this change
-        if(e.target.classList.contains('green')) {
-            practice.addPoint();
-            greenButton.disabled = true;
-            redButton.disabled = false;
-            console.log(practice.points);
-        } else {
-            // if green button was checked in the same round, red buttton substracts point from practice.points
-            if(greenButton.disabled === true) {
-                practice.subtractPoint();
+        if(practice.practiceTimer) { //add points only if game was started
+            if(e.target.classList.contains('green')) {
+                practice.addPoint();
+                greenButton.disabled = true;
+                redButton.disabled = false;
+                console.log(practice.points);
+            } else {
+                // if green button was checked in the same round, red buttton substracts point from practice.points
+                if(greenButton.disabled === true) {
+                    practice.subtractPoint();
+                    console.log(practice.points);
+                }
+                redButton.disabled = true;
+                greenButton.disabled = false;
                 console.log(practice.points);
             }
-            redButton.disabled = true;
-            greenButton.disabled = false;
-            console.log(practice.points);
         }
-
     })
 });
+
+function removingScoreClass() {
+    greenButtons.forEach(element => {
+        element.classList.remove('score');
+        element.disabled = false;
+    })
+}
 
 startButton.addEventListener('click', () => {
     practice.isTimerPaused = false;
     practice.startTimer(timer);
+    removingScoreClass();
     startButton.disabled = true;
     setTimeout(() => {
         pauseButton.disabled = false;
@@ -65,6 +74,9 @@ pauseButton.addEventListener('click', () => {
     practice.pauseTimer();
     startButton.disabled = false;
     pauseButton.disabled = true;
+    greenButtons.forEach(element => {
+        element.disabled = true;
+    })
 })
 
 resetButton.addEventListener('click', () => {
@@ -72,4 +84,5 @@ resetButton.addEventListener('click', () => {
     startButton.disabled = false;
     pauseButton.disabled = false;
     timer.innerHTML = '30:00';
+    removingScoreClass();
 })
