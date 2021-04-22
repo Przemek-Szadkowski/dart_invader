@@ -86,3 +86,5 @@ resetButton.addEventListener('click', () => {
     timer.innerHTML = '30:00';
     removingScoreClass();
 })
+
+// zapamiętanie wciąśniętych przycisków lotek podczas pauzy gry
