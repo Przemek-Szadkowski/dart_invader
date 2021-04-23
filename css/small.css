@@ -127,55 +127,46 @@ aside .controllers button {
   text-shadow: 0 0 10px #D15E2B;
 }
 
-aside .history {
+aside .history_container {
   display: grid;
+  grid-template-rows: 1fr 1fr;
+  justify-content: center;
+  align-content: center;
 }
 
-aside .history div {
-  padding: 10px 0;
+div.history_container div {
+  padding: 5px 10px;
 }
 
-aside .history div {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  justify-items: center;
-  align-items: center;
+div.history {
+  margin-top: 5px;
 }
 
-.history div p {
-  font-size: 1.5rem;
-}
-
-.history button {
-  width: 5vh;
+div.history_container div button {
+  width: 15vh;
   height: 5vh;
-  background: #000;
-  text-transform: uppercase;
-  border-style: none;
+  background-color: #222;
   transition: .5s;
-  color: #28B741;
-  border-radius: 25%;
-  font-size: 2rem;
+  border-radius: 5%;
+  font-size: 1.2rem;
 }
 
 #reset_button {
-  background-color: #D15E2B;
-  color: #ccc;
-}
-
-#reset_button:hover {
-  background-color: #e93717;
-  box-shadow: 0 0 30px #D15E2B;
+  color: #D15E2B;
 }
 
 #history_button {
-  background-color: #28B741;
-  color: #ccc;
+  color: #28B741;
+}
+
+#reset_button:hover {
+  color: #e93717;
+  background-color: #333;
 }
 
 #history_button:hover {
-  background-color: #20d410;
-  box-shadow: 0 0 30px #28B741;
+  color: #20d410;
+  background-color: #333;
 }
 
 main {
