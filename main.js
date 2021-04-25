@@ -8,6 +8,7 @@ const pauseButton = document.getElementById('pause');
 const resetButton = document.getElementById('reset_button');
 const historyButton = document.getElementById('history_button');
 const containerForBigNumber = document.querySelector('.bigNumber');
+const containerForSmallNumber = document.querySelector('.smallNumber');
 
 const practice = new Practice();
 let targetsSet = null;
@@ -32,7 +33,7 @@ startButton.addEventListener('click', () => {
 
     if(!practice.isTimerPaused) {
         targetsSet = new Target(); //prevents setting dartsInRound to zero when pause button is checked
-        targetsSet.drawBigNumber(containerForBigNumber);
+        targetsSet.drawNumber(containerForBigNumber);
     }
 
     practice.isTimerPaused = false;
@@ -97,11 +98,20 @@ greenButtons.forEach(element => {
         }
 
         if(practice.showNextTarget && targetsSet.dartsInRound === 3) {
-            setTimeout(() => {
-                targetsSet.dartsInRound = 0;
-                targetsSet.drawBigNumber(containerForBigNumber);
-                removingScoreClass();
-            }, 500)
+            if(practice.points < 30) {
+                setTimeout(() => {
+                    targetsSet.dartsInRound = 0;
+                    targetsSet.drawNumber(containerForBigNumber);
+                    removingScoreClass();
+                }, 400)
+            } else if(practice.points < 60) {
+                setTimeout(() => {
+                    containerForBigNumber.classList.remove('visible');
+                    targetsSet.dartsInRound = 0;
+                    targetsSet.drawNumber(containerForSmallNumber);
+                    removingScoreClass();
+                }, 400)
+            }
         }
     })
 });
@@ -110,7 +120,7 @@ pauseButton.addEventListener('click', () => {
     practice.pauseTimer();
     startButton.disabled = false;
     pauseButton.disabled = true;
-    greenButtons.forEach(element => {//dodać do pazuy pamięc o lotkach w momencie wciśnięcia przycisku
+    greenButtons.forEach(element => {
         element.disabled = true;
     })
 })

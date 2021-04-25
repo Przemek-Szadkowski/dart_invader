@@ -197,13 +197,23 @@ div.screen p.bigNumber {
   display: none;
 }
 
-div.screen p.bigNumber.visible {
+div.screen p.bigNumber.visible, div.screen p.smallNumber.visible {
   display: block;
   position: absolute;
   top: 10%;
   left: 50%;
   transform: translateX(-50%);
   font-size: 6rem;
+}
+
+div.screen p.smallNumber {
+  display: none;
+}
+
+div.screen p.smallNumber.visible {
+  top: 45%;
+  left: 50%;
+  font-size: 4rem;
 }
 
 /* drawing numbers block - END */
