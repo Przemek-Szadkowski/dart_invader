@@ -97,9 +97,11 @@ greenButtons.forEach(element => {
         }
 
         if(practice.showNextTarget && targetsSet.dartsInRound === 3) {
-            targetsSet.dartsInRound = 0;
-            targetsSet.drawBigNumber(containerForBigNumber);
-            removingScoreClass();
+            setTimeout(() => {
+                targetsSet.dartsInRound = 0;
+                targetsSet.drawBigNumber(containerForBigNumber);
+                removingScoreClass();
+            }, 500)
         }
     })
 });
