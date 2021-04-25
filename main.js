@@ -10,6 +10,7 @@ const historyButton = document.getElementById('history_button');
 const containerForBigNumber = document.querySelector('.bigNumber');
 const containerForSmallNumber = document.querySelector('.smallNumber');
 const containerForDoubleNumber = document.querySelector('.double');
+const containerForBullNumber = document.querySelector('.bull');
 
 const practice = new Practice();
 let targetsSet = null;
@@ -77,11 +78,9 @@ greenButtons.forEach(element => {
                 practice.addPoint();
                 if(!hasRedButtonScoreClass) {
                     targetsSet.addDartInRound();
-                    console.log('darts:' + targetsSet.dartsInRound);
                 }
                 greenButton.disabled = true;
                 redButton.disabled = false;
-                console.log(practice.points);
             } else {
                 // if green button was checked in the same round, red buttton substracts point from practice.points
                 if(hasGreenButtonScoreClass) {
@@ -89,9 +88,7 @@ greenButtons.forEach(element => {
                 }
                 if(!hasGreenButtonScoreClass) {
                     targetsSet.addDartInRound();
-                    console.log('darts:' + targetsSet.dartsInRound);
                 }
-                console.log(practice.points);
                 redButton.disabled = true;
                 greenButton.disabled = false;
                 // console.log(practice.points);
@@ -117,9 +114,17 @@ greenButtons.forEach(element => {
                 setTimeout(() => {
                     containerForSmallNumber.classList.remove('visible');
                     targetsSet.dartsInRound = 0;
-                    targetsSet.drawNumber(containerForDoubleNumber, 'D');
+                    const randomFlag = Math.floor(Math.random() * 12);
+                    console.log(randomFlag)
+                    if(randomFlag === 1 || randomFlag === 2) {
+                        targetsSet.drawNumber(containerForBullNumber, '', true);
+                        containerForDoubleNumber.classList.remove('visible');
+                    } else {
+                        containerForBullNumber.classList.remove('visible');
+                        targetsSet.drawNumber(containerForDoubleNumber, 'D');
+                    }
                     removingScoreClass();
-                }, 400)
+                }, 400) // Zrobić triple!!! A potem animację do pojawiających się celów i zakończenie gry przy 30:00 + wyskakujący modal z wynikiem, a potem jeszcze instruckje i przycisk ze znakiem zapytania:)
             }
         }
     })
