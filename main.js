@@ -97,8 +97,9 @@ greenButtons.forEach(element => {
         }
 
         if(practice.showNextTarget && targetsSet.dartsInRound === 3) {
+            targetsSet.dartsInRound = 0;
             targetsSet.drawBigNumber(containerForBigNumber);
-            //usunąć przy resecie starą liczbę, sprawdzić co się dzieje przy pauzie i zaprogramować usuwanie klas datsó po 3 lotce!!!
+            removingScoreClass();
         }
     })
 });
@@ -119,6 +120,7 @@ resetButton.addEventListener('click', () => {
     pauseButton.disabled = false;
     historyButton.disabled = false;
     practice.showNextTarget = false;
-    timer.innerHTML = '30:00';
+    timer.textContent = '30:00';
+    containerForBigNumber.textContent = '';
     removingScoreClass();
 })

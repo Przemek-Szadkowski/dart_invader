@@ -31,6 +31,7 @@ class Practice {
         this.isTimerPaused = false;
         clearInterval(this.practiceTimer);
         this.practiceTimer = 0;
+        this.showNextTarget = false;
     }
 
     addPoint() {
