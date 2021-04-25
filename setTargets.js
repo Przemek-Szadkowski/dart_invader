@@ -12,13 +12,13 @@ class Target {
         this.dartsInRound = 0;
     }
     //randomization methods
-    drawNumber(element) {
+    drawNumber(element, category = '') {
         console.log(this.bigNumbers);
         if(this.bigNumbers.length === 0) {
             this.bigNumbers = [...NUMBERS];
         }
         const newTarget = Math.floor(Math.random() * this.bigNumbers.length);
-        element.textContent = this.bigNumbers[newTarget];
+        element.textContent = `${category}${this.bigNumbers[newTarget]}`;
         element.classList.add('visible');
         this.bigNumbers.splice(newTarget, 1);
         console.log(newTarget);

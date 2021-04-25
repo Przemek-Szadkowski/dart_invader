@@ -9,6 +9,7 @@ const resetButton = document.getElementById('reset_button');
 const historyButton = document.getElementById('history_button');
 const containerForBigNumber = document.querySelector('.bigNumber');
 const containerForSmallNumber = document.querySelector('.smallNumber');
+const containerForDoubleNumber = document.querySelector('.double');
 
 const practice = new Practice();
 let targetsSet = null;
@@ -97,6 +98,7 @@ greenButtons.forEach(element => {
             }
         }
 
+        //tis part can be shorter
         if(practice.showNextTarget && targetsSet.dartsInRound === 3) {
             if(practice.points < 30) {
                 setTimeout(() => {
@@ -104,11 +106,18 @@ greenButtons.forEach(element => {
                     targetsSet.drawNumber(containerForBigNumber);
                     removingScoreClass();
                 }, 400)
-            } else if(practice.points < 60) {
+            } else if(practice.points < 50) {
                 setTimeout(() => {
                     containerForBigNumber.classList.remove('visible');
                     targetsSet.dartsInRound = 0;
                     targetsSet.drawNumber(containerForSmallNumber);
+                    removingScoreClass();
+                }, 400)
+            } else if(practice.points < 80) {
+                setTimeout(() => {
+                    containerForSmallNumber.classList.remove('visible');
+                    targetsSet.dartsInRound = 0;
+                    targetsSet.drawNumber(containerForDoubleNumber, 'D');
                     removingScoreClass();
                 }, 400)
             }
