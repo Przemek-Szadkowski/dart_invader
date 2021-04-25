@@ -12,7 +12,7 @@ class Target {
     //randomization methods
     drawBigNumber(element) {
         const newTarget = Math.floor(Math.random() * this.bigNumbers.length + 1);
-        element.innerHTML = newTarget;
+        element.textContent = newTarget;
         element.classList.add('visible');
     }
 }
