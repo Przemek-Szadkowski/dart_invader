@@ -193,11 +193,11 @@ div.screen {
 
 /* drawing numbers block - START */
 
-div.screen p.bigNumber, div.screen p.smallNumber, div.screen p.double, div.screen p.bull {
+div.screen p.bigNumber, div.screen p.smallNumber, div.screen p.double, div.screen p.bull, div.screen p.triple {
   display: none;
 }
 
-div.screen p.bigNumber.visible, div.screen p.smallNumber.visible, div.screen p.double.visible, div.screen p.bull.visible {
+div.screen p.bigNumber.visible, div.screen p.smallNumber.visible, div.screen p.double.visible, div.screen p.bull.visible, div.screen p.triple.visible {
   display: block;
   position: absolute;
   top: 10%;
@@ -222,6 +222,20 @@ div.screen p.bull.visible {
   top: 84%;
   left: 50%;
   font-size: 5rem;
+}
+
+div.screen p.triple.visible {
+  top: 34%;
+  left: 50%;
+  font-size: 3rem;
+}
+
+#counter {
+  position: absolute;
+  top: 0%;
+  left: 10%;
+  z-index: 1;
+  font-size: 3rem;
 }
 
 

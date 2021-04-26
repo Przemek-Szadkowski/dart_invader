@@ -11,6 +11,9 @@ const containerForBigNumber = document.querySelector('.bigNumber');
 const containerForSmallNumber = document.querySelector('.smallNumber');
 const containerForDoubleNumber = document.querySelector('.double');
 const containerForBullNumber = document.querySelector('.bull');
+const containerForTripleNumber = document.querySelector('.triple');
+
+const temporaryCounter =document.getElementById('counter');
 
 const practice = new Practice();
 let targetsSet = null;
@@ -124,8 +127,15 @@ greenButtons.forEach(element => {
                         targetsSet.drawNumber(containerForDoubleNumber, 'D');
                     }
                     removingScoreClass();
-                }, 400) // Zrobić triple!!! A potem animację do pojawiających się celów i zakończenie gry przy 30:00 + wyskakujący modal z wynikiem, a potem jeszcze instruckje i przycisk ze znakiem zapytania:)
+                }, 400) //A potem animację do pojawiających się celów i zakończenie gry przy 30:00 + wyskakujący modal z wynikiem, a potem jeszcze instruckje i przycisk ze znakiem zapytania:)))
+            } else if(practice.points < 100) {
+                containerForBullNumber.classList.remove('visible');
+                containerForDoubleNumber.classList.remove('visible');
+                targetsSet.dartsInRound = 0;
+                targetsSet.drawNumber(containerForTripleNumber, 'T');
+                removingScoreClass();
             }
+            temporaryCounter.textContent = practice.points;//temporary counter - for tests
         }
     })
 });
