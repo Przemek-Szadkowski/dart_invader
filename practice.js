@@ -14,6 +14,7 @@ class Practice {
                 this.practiceTime -= 1;
                 const minutes = Math.floor(this.practiceTime / 60);
                 const seconds = this.practiceTime % 60;
+                //czy tutaj wstawić ifa i sprawdzić gdy minutesw i seconds wynoszą 00:00???????
                 element.textContent = `${minutes >= 10 ? minutes : '0' +  minutes}:${seconds >= 10 ? seconds : '0' + seconds}`;
             } else {
                 clearInterval(this.practiceTimer);

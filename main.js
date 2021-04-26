@@ -18,6 +18,8 @@ const temporaryCounter =document.getElementById('counter');
 const practice = new Practice();
 let targetsSet = null;
 
+timer.textContent = `${practice.practiceTime / 60}:00`;
+
 function removingScoreClass() {
     greenButtons.forEach(element => {
         if(!practice.isTimerPaused) {
@@ -156,7 +158,7 @@ resetButton.addEventListener('click', () => {
     pauseButton.disabled = false;
     historyButton.disabled = false;
     practice.showNextTarget = false;
-    timer.textContent = '30:00';
+    timer.textContent = `${practice.practiceTime / 60}:00`;
     containerForBigNumber.textContent = '';
     removingScoreClass();
 })
