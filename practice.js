@@ -1,6 +1,6 @@
 class Practice {
     constructor() {
-        this.practiceTime = 10;
+        this.practiceTime = 1800;
         this.points = 0;
         this.isTimerPaused = false;
         this.practiceTimer = 0;
@@ -26,7 +26,7 @@ class Practice {
                 clearInterval(this.practiceTimer);
             }
         }, 1000)
-    }//dodąc informacje na koniec gry do modala!!!!
+    }//dodąc informacje na koniec gry do modala, button zamykający modala i robiący to samo co przycisk reset!!!!
 
     pauseTimer() {
         this.isTimerPaused = true;

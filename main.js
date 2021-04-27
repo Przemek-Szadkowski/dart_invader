@@ -12,7 +12,7 @@ const containerForSmallNumber = document.querySelector('.smallNumber');
 const containerForDoubleNumber = document.querySelector('.double');
 const containerForBullNumber = document.querySelector('.bull');
 const containerForTripleNumber = document.querySelector('.triple');
-const modalContainer = document.querySelector('.modal');
+const modalContainer = document.querySelector('.modal_outer');
 
 const temporaryCounter =document.getElementById('counter');
 
