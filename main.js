@@ -12,13 +12,14 @@ const containerForSmallNumber = document.querySelector('.smallNumber');
 const containerForDoubleNumber = document.querySelector('.double');
 const containerForBullNumber = document.querySelector('.bull');
 const containerForTripleNumber = document.querySelector('.triple');
+const modalContainer = document.querySelector('.modal');
 
 const temporaryCounter =document.getElementById('counter');
 
 const practice = new Practice();
 let targetsSet = null;
 
-timer.textContent = `${practice.practiceTime / 60}:00`;
+timer.textContent = `${Math.floor(practice.practiceTime / 60)}:${practice.practiceTime % 60 > 9 ? practice.practiceTime % 60 : '0' + practice.practiceTime % 60}`; 
 
 function removingScoreClass() {
     greenButtons.forEach(element => {
@@ -31,7 +32,7 @@ function removingScoreClass() {
 
 startButton.addEventListener('click', () => {
     removingScoreClass();
-    practice.startTimer(timer);
+    practice.startTimer(timer, modalContainer);
     startButton.disabled = true;
     historyButton.disabled = true;
     setTimeout(() => {
@@ -158,7 +159,11 @@ resetButton.addEventListener('click', () => {
     pauseButton.disabled = false;
     historyButton.disabled = false;
     practice.showNextTarget = false;
-    timer.textContent = `${practice.practiceTime / 60}:00`;
+    timer.textContent = `${Math.floor(practice.practiceTime / 60)}:${practice.practiceTime % 60 > 9 ? practice.practiceTime % 60 : '0' + practice.practiceTime % 60}`; 
     containerForBigNumber.textContent = '';
     removingScoreClass();
 })
+
+if(practice.endGame === true) {
+    modalContainer.classList.add('visible');
+}
