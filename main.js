@@ -130,7 +130,7 @@ greenButtons.forEach(element => {
                         targetsSet.drawNumber(containerForDoubleNumber, 'D');
                     }
                     removingScoreClass();
-                }, 400) //A potem animację do pojawiających się celów i zakończenie gry przy 30:00 + wyskakujący modal z wynikiem, a potem jeszcze instruckje i przycisk ze znakiem zapytania:)))
+                }, 400) //zakończenie gry przy 30:00 + wyskakujący modal z wynikiem, a potem jeszcze instruckje i przycisk ze znakiem zapytania:)))
             } else if(practice.points < 100) {
                 containerForBullNumber.classList.remove('visible');
                 containerForDoubleNumber.classList.remove('visible');
