@@ -1,6 +1,6 @@
 class Practice {
     constructor() {
-        this.practiceTime = 1800;
+        this.practiceTime = 900;
         this.points = 0;
         this.isTimerPaused = false;
         this.practiceTimer = 0;
@@ -15,10 +15,11 @@ class Practice {
                 const minutes = Math.floor(this.practiceTime / 60);
                 const seconds = this.practiceTime % 60;
                 if(minutes === 0 && seconds === 0) {
-                    element.textContent = 'THE END';
-                    element.style.fontSize = '2rem';
+                    element.textContent = '00:00';
                     clearInterval(this.practiceTimer);
                     modal.classList.add('visible');
+                    const inner_modal = modal.querySelector('.modal_inner');
+                    this.practiceResume(inner_modal);
                 } else {
                     element.textContent = `${minutes >= 10 ? minutes : '0' +  minutes}:${seconds >= 10 ? seconds : '0' + seconds}`;
                 }
@@ -47,6 +48,12 @@ class Practice {
 
     subtractPoint() {
         this.points--;
+    }
+
+    practiceResume(modal) {
+        const resumeText = `<p>Twój wynik:</p>
+        <p>${this.points}</p>`;
+        modal.insertAdjacentHTML('afterbegin', resumeText);
     }
 }
 

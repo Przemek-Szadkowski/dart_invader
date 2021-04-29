@@ -13,6 +13,7 @@ const containerForDoubleNumber = document.querySelector('.double');
 const containerForBullNumber = document.querySelector('.bull');
 const containerForTripleNumber = document.querySelector('.triple');
 const modalContainer = document.querySelector('.modal_outer');
+const modalReset = document.getElementById('modal_reset');
 
 const temporaryCounter =document.getElementById('counter');
 
@@ -28,6 +29,17 @@ function removingScoreClass() {
             element.disabled = false;   
         }
     })
+}
+
+function reset() {
+    practice.resetPractice();
+    targetsSet.resetDarts();
+    startButton.disabled = false;
+    pauseButton.disabled = false;
+    historyButton.disabled = false;
+    practice.showNextTarget = false;
+    timer.textContent = `${Math.floor(practice.practiceTime / 60)}:${practice.practiceTime % 60 > 9 ? practice.practiceTime % 60 : '0' + practice.practiceTime % 60}`; 
+    containerForBigNumber.textContent = '';
 }
 
 startButton.addEventListener('click', () => {
@@ -130,7 +142,7 @@ greenButtons.forEach(element => {
                         targetsSet.drawNumber(containerForDoubleNumber, 'D');
                     }
                     removingScoreClass();
-                }, 400) //zakończenie gry przy 30:00 + wyskakujący modal z wynikiem, a potem jeszcze instruckje i przycisk ze znakiem zapytania:)))
+                }, 400) //zakończenie gry przy 30:00 + wyskakujący modal z wynikiem, historia gry wraz z działającym przyciskiem, a potem jeszcze instruckje i przycisk ze znakiem zapytania:)))
             } else if(practice.points < 100) {
                 containerForBullNumber.classList.remove('visible');
                 containerForDoubleNumber.classList.remove('visible');
@@ -153,15 +165,13 @@ pauseButton.addEventListener('click', () => {
 })
 
 resetButton.addEventListener('click', () => {
-    practice.resetPractice();
-    targetsSet.resetDarts();
-    startButton.disabled = false;
-    pauseButton.disabled = false;
-    historyButton.disabled = false;
-    practice.showNextTarget = false;
-    timer.textContent = `${Math.floor(practice.practiceTime / 60)}:${practice.practiceTime % 60 > 9 ? practice.practiceTime % 60 : '0' + practice.practiceTime % 60}`; 
-    containerForBigNumber.textContent = '';
+    reset();
     removingScoreClass();
+})
+
+modalReset.addEventListener('click', () => {
+    reset();
+    modalContainer.classList.remove('visible');
 })
 
 if(practice.endGame === true) {
