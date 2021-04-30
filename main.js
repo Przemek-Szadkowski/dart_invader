@@ -33,7 +33,7 @@ function removingScoreClass() {
 
 function reset() {
     practice.resetPractice();
-    targetsSet.resetDarts();
+    if(targetsSet) targetsSet.resetDarts();
     startButton.disabled = false;
     pauseButton.disabled = false;
     historyButton.disabled = false;
@@ -79,12 +79,8 @@ greenButtons.forEach(element => {
 
         sameClassButtons.forEach(el => {
             el.classList.remove('score');
-            if(el.classList.contains('green')) {
-                greenButton = el;
-            }
-            if(el.classList.contains('red')) {
-                redButton = el;
-            }
+            if(el.classList.contains('green')) greenButton = el;
+            if(el.classList.contains('red')) redButton = el;
         })
         element.classList.add('score');
 
@@ -94,26 +90,20 @@ greenButtons.forEach(element => {
         if(practice.practiceTimer) { //add points only if game was started
             if(e.target.classList.contains('green')) {
                 practice.addPoint();
-                if(!hasRedButtonScoreClass) {
-                    targetsSet.addDartInRound();
-                }
+                if(!hasRedButtonScoreClass) targetsSet.addDartInRound();
                 greenButton.disabled = true;
                 redButton.disabled = false;
             } else {
                 // if green button was checked in the same round, red buttton substracts point from practice.points
-                if(hasGreenButtonScoreClass) {
-                    practice.subtractPoint();
-                }
-                if(!hasGreenButtonScoreClass) {
-                    targetsSet.addDartInRound();
-                }
+                if(hasGreenButtonScoreClass) practice.subtractPoint();
+                if(!hasGreenButtonScoreClass) targetsSet.addDartInRound();
                 redButton.disabled = true;
                 greenButton.disabled = false;
                 // console.log(practice.points);
             }
         }
 
-        //tis part can be shorter
+        //this part can be shorter
         if(practice.showNextTarget && targetsSet.dartsInRound === 3) {
             if(practice.points < 30) {
                 setTimeout(() => {
@@ -142,7 +132,7 @@ greenButtons.forEach(element => {
                         targetsSet.drawNumber(containerForDoubleNumber, 'D');
                     }
                     removingScoreClass();
-                }, 400) //zakończenie gry przy 30:00 + wyskakujący modal z wynikiem, historia gry wraz z działającym przyciskiem, a potem jeszcze instruckje i przycisk ze znakiem zapytania:)))
+                }, 400) //historia gry wraz z działającym przyciskiem, a potem jeszcze instruckje i przycisk ze znakiem zapytania i jeszcze favicon!!!:)))
             } else if(practice.points < 100) {
                 containerForBullNumber.classList.remove('visible');
                 containerForDoubleNumber.classList.remove('visible');
@@ -171,6 +161,8 @@ resetButton.addEventListener('click', () => {
 
 modalReset.addEventListener('click', () => {
     reset();
+    removingScoreClass();
+    containerForTripleNumber.classList.remove('visible');
     modalContainer.classList.remove('visible');
 })
 

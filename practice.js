@@ -27,7 +27,7 @@ class Practice {
                 clearInterval(this.practiceTimer);
             }
         }, 1000)
-    }//dodąc informacje na koniec gry do modala, button zamykający modala i robiący to samo co przycisk reset!!!!
+    }
 
     pauseTimer() {
         this.isTimerPaused = true;
