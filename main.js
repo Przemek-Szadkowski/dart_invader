@@ -13,6 +13,7 @@ const containerForDoubleNumber = document.querySelector('.double');
 const containerForBullNumber = document.querySelector('.bull');
 const containerForTripleNumber = document.querySelector('.triple');
 const modalContainer = document.querySelector('.modal_outer');
+const historyModalContainer = document.querySelector('.history_modal_outer');
 const modalReset = document.getElementById('modal_reset');
 
 const temporaryCounter =document.getElementById('counter');
@@ -166,9 +167,9 @@ modalReset.addEventListener('click', () => {
     modalContainer.classList.remove('visible');
 })
 
-// historyButton.addEventListener('click', () => {
-//     continue;
-// })
+historyButton.addEventListener('click', () => {
+    historyModalContainer.classList.add('visible');
+})
 
 if(practice.endGame === true) {
     modalContainer.classList.add('visible');

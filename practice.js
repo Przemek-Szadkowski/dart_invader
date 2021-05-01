@@ -1,6 +1,6 @@
 class Practice {
     constructor() {
-        this.practiceTime = 3;
+        this.practiceTime = 10;
         this.points = 0;
         this.isTimerPaused = false;
         this.practiceTimer = 0;
