@@ -166,6 +166,10 @@ modalReset.addEventListener('click', () => {
     modalContainer.classList.remove('visible');
 })
 
+// historyButton.addEventListener('click', () => {
+//     continue;
+// })
+
 if(practice.endGame === true) {
     modalContainer.classList.add('visible');
 }

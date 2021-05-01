@@ -1,10 +1,11 @@
 class Practice {
     constructor() {
-        this.practiceTime = 900;
+        this.practiceTime = 3;
         this.points = 0;
         this.isTimerPaused = false;
         this.practiceTimer = 0;
         this.showNextTarget = false;
+        this.sessions = [];
     }
 
     startTimer(element, modal) {
@@ -20,6 +21,7 @@ class Practice {
                     modal.classList.add('visible');
                     const inner_modal = modal.querySelector('.modal_inner');
                     this.practiceResume(inner_modal);
+                    this.saveToLocalStorage();
                 } else {
                     element.textContent = `${minutes >= 10 ? minutes : '0' +  minutes}:${seconds >= 10 ? seconds : '0' + seconds}`;
                 }
@@ -54,6 +56,24 @@ class Practice {
         const resumeText = `<p>Twój wynik:</p>
         <p>${this.points}</p>`;
         modal.insertAdjacentHTML('afterbegin', resumeText);
+    }
+
+    saveToLocalStorage() {
+        let previousSessionsFromLocalStorage = JSON.parse(localStorage.getItem('sessions'));
+
+        const today = new Date();
+        const day = today.getDate();
+        const month = today.getMonth();
+        const year = today.getFullYear();
+        const hour = today.getHours();
+        const minutes = today.getMinutes();
+
+        const session = `<tr><td>${day}/${month}/${year}</td><td>${hour}:${minutes}</td><td>${this.points}</td></tr>`
+
+        if(previousSessionsFromLocalStorage === null) previousSessionsFromLocalStorage = [];
+        previousSessionsFromLocalStorage.push(session);
+
+        localStorage.setItem('sessions', JSON.stringify(previousSessionsFromLocalStorage));
     }
 }
 
