@@ -342,7 +342,7 @@ footer a {
   width: 100%;
   height: 100%;
   background-color: #000;
-  opacity: .8;
+  opacity: .9;
   z-index: 2;
 }
 
@@ -359,8 +359,14 @@ footer a {
   bottom: 5%;
   border-radius: 4%;
   background-color: white;
-  opacity: .8;
+  opacity: .9;
   z-index: 3;
+}
+
+.history_modal_inner {
+  overflow: scroll;
+  justify-content: stretch;
+  align-content: space-around;
 }
 
 .modal_inner p {
@@ -376,7 +382,7 @@ footer a {
   font-size: 8rem;
 }
 
-.modal_inner button {
+.modal_inner button, .history_modal_inner button {
   margin-top: 30%;
   padding: 3px;
   width: 50%;
@@ -387,9 +393,20 @@ footer a {
   transition: .5s;
 }
 
-.modal_inner button:hover {
+.modal_inner button:hover, .history_modal_inner button:hover {
   background-color: #222;
   color: white;
+}
+
+.history_modal_inner table {
+  margin: 0 20px;
+  color:#000;
+  font-size: 1.2rem;
+  border: 1px solid black;
+}
+
+table td {
+  text-align: center;
 }
 
 /* animations */

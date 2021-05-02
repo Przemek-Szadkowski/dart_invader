@@ -15,6 +15,10 @@ const containerForTripleNumber = document.querySelector('.triple');
 const modalContainer = document.querySelector('.modal_outer');
 const historyModalContainer = document.querySelector('.history_modal_outer');
 const modalReset = document.getElementById('modal_reset');
+const historyResetButton = document.getElementById('history_reset');
+const resultsTable = document.getElementById('results');
+
+const tableHeader = `<tr><th>Data</th><th>Godzina</th><th>Ilość punktów</th></tr>`;
 
 const temporaryCounter =document.getElementById('counter');
 
@@ -41,6 +45,15 @@ function reset() {
     practice.showNextTarget = false;
     timer.textContent = `${Math.floor(practice.practiceTime / 60)}:${practice.practiceTime % 60 > 9 ? practice.practiceTime % 60 : '0' + practice.practiceTime % 60}`; 
     containerForBigNumber.textContent = '';
+}
+
+function loadFromLocalStorage() {
+    const dataFromLocalStorage = JSON.parse(localStorage.getItem('sessions'));
+    resultsTable.innerHTML = '';
+    dataFromLocalStorage.forEach(session => {
+        resultsTable.insertAdjacentHTML('afterbegin', session);
+    });
+    resultsTable.insertAdjacentHTML('afterbegin', tableHeader);
 }
 
 startButton.addEventListener('click', () => {
@@ -133,7 +146,7 @@ greenButtons.forEach(element => {
                         targetsSet.drawNumber(containerForDoubleNumber, 'D');
                     }
                     removingScoreClass();
-                }, 400) //historia gry wraz z działającym przyciskiem, a potem jeszcze instruckje i przycisk ze znakiem zapytania i jeszcze favicon!!!:)))
+                }, 400) //historia treningów, a potem jeszcze instrukcje i przycisk ze znakiem zapytania i jeszcze favicon!!!:)))
             } else if(practice.points < 100) {
                 containerForBullNumber.classList.remove('visible');
                 containerForDoubleNumber.classList.remove('visible');
@@ -169,6 +182,11 @@ modalReset.addEventListener('click', () => {
 
 historyButton.addEventListener('click', () => {
     historyModalContainer.classList.add('visible');
+    loadFromLocalStorage();
+})
+
+historyResetButton.addEventListener('click', () => {
+    historyModalContainer.classList.remove('visible');
 })
 
 if(practice.endGame === true) {

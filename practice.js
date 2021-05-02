@@ -60,10 +60,11 @@ class Practice {
 
     saveToLocalStorage() {
         let previousSessionsFromLocalStorage = JSON.parse(localStorage.getItem('sessions'));
+        console.log(previousSessionsFromLocalStorage);
 
         const today = new Date();
         const day = today.getDate();
-        const month = today.getMonth();
+        const month = today.getMonth() + 1;
         const year = today.getFullYear();
         const hour = today.getHours();
         const minutes = today.getMinutes();
