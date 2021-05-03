@@ -1,5 +1,6 @@
 import Practice from './practice.js';
 import Target from './setTargets.js';
+import Help from './help.js';
 
 const greenButtons = document.querySelectorAll('.dart');
 const timer = document.getElementById('timer');
@@ -17,12 +18,17 @@ const historyModalContainer = document.querySelector('.history_modal_outer');
 const modalReset = document.getElementById('modal_reset');
 const historyResetButton = document.getElementById('history_reset');
 const resultsTable = document.getElementById('results');
+const hintContainer = document.querySelector('.hint');
+const helpButton = document.getElementById('help');
+const nextButton = document.getElementById('next');
+const textHintContainer = document.getElementById('text');
 
 const tableHeader = `<thead><tr><th>Data</th><th>Godzina</th><th>Ilość punktów</th></tr></thead>`;
 
 const temporaryCounter =document.getElementById('counter');
 
 const practice = new Practice();
+const help = new Help();
 let targetsSet = null;
 
 timer.textContent = `${Math.floor(practice.practiceTime / 60)}:${practice.practiceTime % 60 > 9 ? practice.practiceTime % 60 : '0' + practice.practiceTime % 60}`; 
@@ -190,6 +196,21 @@ historyButton.addEventListener('click', () => {
 historyResetButton.addEventListener('click', () => {
     historyModalContainer.classList.remove('visible');
 })
+
+helpButton.addEventListener('click', () => {
+    hintContainer.classList.add('visible');
+    textHintContainer.insertAdjacentHTML('afterbegin', help.firstStep);
+    helpButton.disabled = true;
+})
+
+nextButton.addEventListener('click', () => {
+    hintContainer.classList.add('second');
+    textHintContainer.innerHTML = '';
+    textHintContainer.insertAdjacentHTML('afterbegin', help.secondStep);
+})
+
+// dodać następne klasy - być może je sprawdzać w sensie czy są poprzednie i wtedy dodawać
+// na końcu przywrócić diosable=false dla help buttona
 
 if(practice.endGame === true) {
     modalContainer.classList.add('visible');

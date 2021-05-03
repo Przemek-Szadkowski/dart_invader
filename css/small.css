@@ -441,7 +441,7 @@ table th {
   font-size: 1.2rem;
   border-radius: 0%;
   background-color: #555;
-  border-radius: 50%;
+  border-radius: 5%;
   border: 2px solid #fff;
   opacity: .3;
   transition: .5s;
@@ -467,6 +467,13 @@ table th {
   border-radius: 5%;
   width: 80%;
   z-index: 4;
+  transition: .1s;
+}
+
+.hint.visible.second {
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .hint.visible p {
