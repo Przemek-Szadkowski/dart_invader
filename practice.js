@@ -69,7 +69,7 @@ class Practice {
         const hour = today.getHours();
         const minutes = today.getMinutes();
 
-        const session = `<tr><td>${day}/${month}/${year}</td><td>${hour}:${minutes}</td><td>${this.points}</td></tr>`
+        const session = `<tr><td>${day}/${month}/${year}</td><td>${hour}:${minutes > 10 ? minutes : '0' + minutes}</td><td>${this.points}</td></tr>`
 
         if(previousSessionsFromLocalStorage === null) previousSessionsFromLocalStorage = [];
         previousSessionsFromLocalStorage.push(session);

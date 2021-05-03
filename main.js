@@ -18,7 +18,7 @@ const modalReset = document.getElementById('modal_reset');
 const historyResetButton = document.getElementById('history_reset');
 const resultsTable = document.getElementById('results');
 
-const tableHeader = `<tr><th>Data</th><th>Godzina</th><th>Ilość punktów</th></tr>`;
+const tableHeader = `<thead><tr><th>Data</th><th>Godzina</th><th>Ilość punktów</th></tr></thead>`;
 
 const temporaryCounter =document.getElementById('counter');
 
@@ -50,10 +50,12 @@ function reset() {
 function loadFromLocalStorage() {
     const dataFromLocalStorage = JSON.parse(localStorage.getItem('sessions'));
     resultsTable.innerHTML = '';
+    resultsTable.innerHTML = `<table>${tableHeader}<tbody></tbody></table>`;
+    // resultsTable.insertAdjacentHTML('beforeend', tableHeader);
+    const tBodyElement = resultsTable.querySelector('tbody');
     dataFromLocalStorage.forEach(session => {
-        resultsTable.insertAdjacentHTML('afterbegin', session);
+        tBodyElement.insertAdjacentHTML('afterbegin', session);
     });
-    resultsTable.insertAdjacentHTML('afterbegin', tableHeader);
 }
 
 startButton.addEventListener('click', () => {

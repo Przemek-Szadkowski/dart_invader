@@ -364,9 +364,9 @@ footer a {
 }
 
 .history_modal_inner {
-  overflow: scroll;
   justify-content: stretch;
   align-content: space-around;
+  grid-template-rows: 80% 1fr;
 }
 
 .modal_inner p {
@@ -393,6 +393,10 @@ footer a {
   transition: .5s;
 }
 
+.history_modal_inner button {
+  margin-top: 10%;
+}
+
 .modal_inner button:hover, .history_modal_inner button:hover {
   background-color: #222;
   color: white;
@@ -405,8 +409,27 @@ footer a {
   border: 1px solid black;
 }
 
+.table_container {
+  /* background-color: #000; */
+  width: 100%;
+  display: grid;
+  justify-content: stretch;
+  align-content: center;
+  overflow: scroll;
+  padding-top: 40px;
+  margin-top: 30px;
+}
+
 table td {
   text-align: center;
+}
+
+table tr:nth-of-type(2n){
+  background-color: #ddd;
+}
+
+table th {
+  background-color: #aaa;
 }
 
 /* animations */
