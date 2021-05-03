@@ -199,7 +199,7 @@ div.screen p.bigNumber, div.screen p.smallNumber, div.screen p.double, div.scree
 }
 
 div.screen p.bigNumber.visible, div.screen p.smallNumber.visible, div.screen p.double.visible, div.screen p.bull.visible, div.screen p.triple.visible {
-  display: block;
+  display: initial;
   position: absolute;
   top: 10%;
   left: 50%;
@@ -335,7 +335,7 @@ footer a {
 }
 
 .modal_outer.visible, .history_modal_outer.visible {
-  display: block;
+  display: initial;
   position: absolute;
   top: 0%;
   left: 0%;

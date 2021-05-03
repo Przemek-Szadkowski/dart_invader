@@ -148,7 +148,7 @@ greenButtons.forEach(element => {
                         targetsSet.drawNumber(containerForDoubleNumber, 'D');
                     }
                     removingScoreClass();
-                }, 400) //instrukcje i przycisk ze znakiem zapytania i jeszcze favicon!!!:)))
+                }, 400) //instrukcje i przycisk ze znakiem zapytania
             } else if(practice.points < 100) {
                 containerForBullNumber.classList.remove('visible');
                 containerForDoubleNumber.classList.remove('visible');
