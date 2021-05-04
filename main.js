@@ -204,9 +204,15 @@ helpButton.addEventListener('click', () => {
 })
 
 nextButton.addEventListener('click', () => {
-    hintContainer.classList.add('second');
     textHintContainer.innerHTML = '';
-    textHintContainer.insertAdjacentHTML('afterbegin', help.secondStep);
+    if(hintContainer.classList.contains('second')) {
+        hintContainer.classList.add('third');
+        textHintContainer.insertAdjacentHTML('afterbegin', help.thirdStep);
+    }
+    if(!hintContainer.classList.contains('second')) {
+        hintContainer.classList.add('second');
+        textHintContainer.insertAdjacentHTML('afterbegin', help.secondStep);
+    };
 })
 
 // dodać następne klasy - być może je sprawdzać w sensie czy są poprzednie i wtedy dodawać

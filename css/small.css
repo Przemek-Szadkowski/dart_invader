@@ -463,7 +463,7 @@ table th {
   transform: translate(-50%, -50%);
   padding: 20px;
   background-color: #fff;
-  opacity: .8;
+  opacity: .9;
   border-radius: 5%;
   width: 80%;
   z-index: 4;
@@ -471,9 +471,14 @@ table th {
 }
 
 .hint.visible.second {
-  top: 50%;
+  top: 3%;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.hint.visible.third {
+  top: 65%;
+  left: 50%;
 }
 
 .hint.visible p {
@@ -484,6 +489,7 @@ table th {
 }
 
 .hint.visible button {
+  height: 140%;
   justify-self: end;
   margin-right: 3%;
   border-radius: 0%;
