@@ -205,9 +205,27 @@ helpButton.addEventListener('click', () => {
 
 nextButton.addEventListener('click', () => {
     textHintContainer.innerHTML = '';
-    if(hintContainer.classList.contains('second')) {
-        hintContainer.classList.add('third');
-        textHintContainer.insertAdjacentHTML('afterbegin', help.thirdStep);
+    if(hintContainer.classList.contains('eight')) {
+        hintContainer.classList.add('ninth');
+        textHintContainer.insertAdjacentHTML('afterbegin', help.ninthStep);
+    } else if(hintContainer.classList.contains('seventh')) {
+        hintContainer.classList.add('eight');
+        textHintContainer.insertAdjacentHTML('afterbegin', help.eightStep);
+    } else if(hintContainer.classList.contains('sixth')) {
+        hintContainer.classList.add('seventh');
+        textHintContainer.insertAdjacentHTML('afterbegin', help.seventhStep);
+    } else if(hintContainer.classList.contains('fifth')) {
+        hintContainer.classList.add('sixth');
+        textHintContainer.insertAdjacentHTML('afterbegin', help.sixthStep);
+    } else if(hintContainer.classList.contains('fourth')) {
+        hintContainer.classList.add('fifth');
+        textHintContainer.insertAdjacentHTML('afterbegin', help.fifthStep);
+    } else if(hintContainer.classList.contains('third')) {
+        hintContainer.classList.add('fourth');
+        textHintContainer.insertAdjacentHTML('afterbegin', help.fourthStep);
+    } else if(hintContainer.classList.contains('second')) {
+            hintContainer.classList.add('third');
+            textHintContainer.insertAdjacentHTML('afterbegin', help.thirdStep);
     }
     if(!hintContainer.classList.contains('second')) {
         hintContainer.classList.add('second');

@@ -481,6 +481,31 @@ table th {
   left: 50%;
 }
 
+.hint.visible.fourth {
+  top: 10%;
+  left: 50%;
+}
+
+.hint.visible.fifth {
+  top: 50%;
+  left: 50%;
+}
+
+.hint.visible.seventh {
+  top: 5%;
+  left: 50%;
+}
+
+.hint.visible.eight {
+  top: 30%;
+  left: 50%;
+}
+
+.hint.visible.ninth {
+  top: 61%;
+  left: 50%;
+}
+
 .hint.visible p {
   font-size: 1.5rem;
   color: #000;
