@@ -48,6 +48,7 @@ function reset() {
     startButton.disabled = false;
     pauseButton.disabled = false;
     historyButton.disabled = false;
+    helpButton.disabled = false;
     practice.showNextTarget = false;
     timer.textContent = `${Math.floor(practice.practiceTime / 60)}:${practice.practiceTime % 60 > 9 ? practice.practiceTime % 60 : '0' + practice.practiceTime % 60}`; 
     containerForBigNumber.textContent = '';
@@ -69,6 +70,7 @@ startButton.addEventListener('click', () => {
     practice.startTimer(timer, modalContainer);
     startButton.disabled = true;
     historyButton.disabled = true;
+    helpButton.disabled = true;
     setTimeout(() => {
         pauseButton.disabled = false;
     }, 1000);
@@ -154,7 +156,7 @@ greenButtons.forEach(element => {
                         targetsSet.drawNumber(containerForDoubleNumber, 'D');
                     }
                     removingScoreClass();
-                }, 400) //instrukcje i przycisk ze znakiem zapytania
+                }, 400)
             } else if(practice.points < 100) {
                 containerForBullNumber.classList.remove('visible');
                 containerForDoubleNumber.classList.remove('visible');
@@ -205,7 +207,17 @@ helpButton.addEventListener('click', () => {
 
 nextButton.addEventListener('click', () => {
     textHintContainer.innerHTML = '';
-    if(hintContainer.classList.contains('eight')) {
+    if(hintContainer.classList.contains('eleventh')) {
+        helpButton.disabled = false;
+        hintContainer.className = 'hint';
+    } else if(hintContainer.classList.contains('tenth')) {
+        hintContainer.classList.add('eleventh');
+        textHintContainer.insertAdjacentHTML('afterbegin', help.eleventhStep);
+        nextButton.textContent = 'zamknij';
+    } else if(hintContainer.classList.contains('ninth')) {
+        hintContainer.classList.add('tenth');
+        textHintContainer.insertAdjacentHTML('afterbegin', help.tenthStep);
+    } else if(hintContainer.classList.contains('eight')) {
         hintContainer.classList.add('ninth');
         textHintContainer.insertAdjacentHTML('afterbegin', help.ninthStep);
     } else if(hintContainer.classList.contains('seventh')) {
@@ -226,8 +238,7 @@ nextButton.addEventListener('click', () => {
     } else if(hintContainer.classList.contains('second')) {
             hintContainer.classList.add('third');
             textHintContainer.insertAdjacentHTML('afterbegin', help.thirdStep);
-    }
-    if(!hintContainer.classList.contains('second')) {
+    } else if(!hintContainer.classList.contains('second')) {
         hintContainer.classList.add('second');
         textHintContainer.insertAdjacentHTML('afterbegin', help.secondStep);
     };

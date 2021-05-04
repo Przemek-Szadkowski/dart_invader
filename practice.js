@@ -1,6 +1,8 @@
+const PRACTICE_TIME = 1800;
+
 class Practice {
     constructor() {
-        this.practiceTime = 10;
+        this.practiceTime = PRACTICE_TIME;
         this.points = 0;
         this.isTimerPaused = false;
         this.practiceTimer = 0;
@@ -36,7 +38,7 @@ class Practice {
     }
 
     resetPractice() {
-        this.practiceTime = 1800;
+        this.practiceTime = PRACTICE_TIME;
         this.points = 0;
         this.isTimerPaused = false;
         clearInterval(this.practiceTimer);

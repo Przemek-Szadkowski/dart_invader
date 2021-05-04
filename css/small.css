@@ -433,12 +433,12 @@ table th {
 
 #help {
   position: absolute;
-  width: 15%;
+  width: 16%;
   height: 5%;
   bottom: 1%;
   left: 1%;
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1rem;
   border-radius: 0%;
   background-color: #555;
   border-radius: 5%;
@@ -461,7 +461,7 @@ table th {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 20px;
+  padding: 10px 10px 20px;
   background-color: #fff;
   opacity: .9;
   border-radius: 5%;
@@ -472,42 +472,41 @@ table th {
 
 .hint.visible.second {
   top: 3%;
-  left: 50%;
   transform: translateX(-50%);
 }
 
 .hint.visible.third {
   top: 65%;
-  left: 50%;
 }
 
 .hint.visible.fourth {
   top: 10%;
-  left: 50%;
 }
 
 .hint.visible.fifth {
   top: 50%;
-  left: 50%;
 }
 
 .hint.visible.seventh {
   top: 5%;
-  left: 50%;
 }
 
 .hint.visible.eight {
   top: 30%;
-  left: 50%;
 }
 
 .hint.visible.ninth {
   top: 61%;
-  left: 50%;
 }
 
+.hint.visible.tenth {
+  top: 50%;
+  padding: 25px;
+}
+
+
 .hint.visible p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #000;
   padding: 10px;
   text-align: center;
