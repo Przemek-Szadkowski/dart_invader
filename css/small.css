@@ -525,6 +525,14 @@ table th {
   border: 3px solid #000;
 }
 
+/* @media (orientation: landscape) {
+  body {
+     max-width: 100%;
+     grid-template-columns: repeat(3, 1fr);
+     grid-template-rows: 1fr;
+  }
+} */
+
 /* animations */
 
 @keyframes numberShowing {
