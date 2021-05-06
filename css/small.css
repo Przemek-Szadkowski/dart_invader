@@ -529,6 +529,7 @@ table th {
   body {
      max-width: 100%;
      grid-template-columns: 2fr 1fr 1fr;
+     align-content: center;
   }
 
   #start, #pause {
@@ -546,6 +547,16 @@ table th {
     grid-column-end: 4;
   }
 
+  .buttons button {
+    width: 14vh;
+    height: 14vh;
+  }
+
+  .buttons button::after {
+    width: 10vh;
+    height: 10vh;
+  }
+
   footer {
     grid-column-start: 1;
     grid-column-end: 4;
@@ -556,6 +567,12 @@ table th {
     display: block;
     text-align: left;
     margin-left: 60px;
+    position: absolute;
+    width: 50%;
+    height: 5%;
+    bottom: 1%;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   #help {
