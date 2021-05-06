@@ -25,8 +25,6 @@ const textHintContainer = document.getElementById('text');
 
 const tableHeader = `<thead><tr><th>Data</th><th>Godzina</th><th>Ilość punktów</th></tr></thead>`;
 
-const temporaryCounter =document.getElementById('counter');
-
 const practice = new Practice();
 const help = new Help();
 let targetsSet = null;
@@ -164,7 +162,6 @@ greenButtons.forEach(element => {
                 targetsSet.drawNumber(containerForTripleNumber, 'T');
                 removingScoreClass();
             }
-            temporaryCounter.textContent = practice.points;//temporary counter - for tests
         }
     })
 });
