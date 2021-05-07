@@ -36,6 +36,10 @@ body {
   justify-self: center;
 }
 
+.panel.disactive, .buttons.disactive {
+  pointer-events: none;
+}
+
 .panel {
   display: grid;
   grid-template-rows: 1fr 3fr;
@@ -340,8 +344,8 @@ footer a {
 
 .modal_inner, .history_modal_inner {
   display: grid;
-  grid-template-columns: 1;
-  grid-template-rows: 3;
+  grid-template-columns: 1fr;
+  grid-template-rows: 3fr;
   align-content: center;
   justify-content: center;
   position: absolute;

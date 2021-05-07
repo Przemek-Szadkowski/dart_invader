@@ -22,6 +22,8 @@ const hintContainer = document.querySelector('.hint');
 const helpButton = document.getElementById('help');
 const nextButton = document.getElementById('next');
 const textHintContainer = document.getElementById('text');
+const buttonsDiv = document.querySelector('.buttons');
+const panelDiv = document.querySelector('.panel');
 
 const tableHeader = `<thead><tr><th>Data</th><th>Godzina</th><th>Ilość punktów</th></tr></thead>`;
 
@@ -200,12 +202,16 @@ helpButton.addEventListener('click', () => {
     hintContainer.classList.add('visible');
     textHintContainer.insertAdjacentHTML('afterbegin', help.firstStep);
     helpButton.disabled = true;
+    panelDiv.classList.add('disactive');
+    buttonsDiv.classList.add('disactive');
 })
 
 nextButton.addEventListener('click', () => {
     textHintContainer.innerHTML = '';
     if(hintContainer.classList.contains('eleventh')) {
         helpButton.disabled = false;
+        panelDiv.classList.remove('disactive');
+        buttonsDiv.classList.remove('disactive');
         hintContainer.className = 'hint';
     } else if(hintContainer.classList.contains('tenth')) {
         hintContainer.classList.add('eleventh');
