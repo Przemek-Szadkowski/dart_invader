@@ -30,6 +30,8 @@
 
 ## Features
 
+Live demo https://przemek-szadkowski.github.io/dart_invader/
+
 To-do list:
 * add practice statistics
 * add new feature - game with virtual player
