@@ -1,6 +1,6 @@
 @font-face {
   font-family: BasicRusty;
-  src: url(./Newcastle-BasicRusty.otf);
+  src:url(./Newcastle-BasicRusty.otf);
 }
 
 * {
@@ -36,8 +36,7 @@ body {
   justify-self: center;
 }
 
-.panel.disactive,
-.buttons.disactive {
+.panel.disactive, .buttons.disactive {
   pointer-events: none;
 }
 
@@ -59,9 +58,7 @@ button:hover {
   cursor: pointer;
 }
 
-header,
-.controllers,
-.history {
+header, .controllers, .history {
   justify-self: center;
   align-self: center;
 }
@@ -102,41 +99,38 @@ aside .controllers button {
   margin: 0 10px;
 }
 
-#start,
-#pause {
+#start, #pause {
   background-color: #111;
   color: #ddd;
-  transition: 0.5s;
+  transition: .5s;
 }
 
-#start:disabled,
-#pause:disabled {
-  opacity: 0.2;
+#start:disabled, #pause:disabled {
+  opacity: .2;
 }
 
-#start:focus,
-#pause:focus {
+#start:focus, #pause:focus {
   outline-style: none;
 }
 
 #start {
-  border: 3px solid #28b741;
-  box-shadow: 0 0 10px #28b741;
+  border: 3px solid #28B741;
+  box-shadow: 0 0 10px #28B741;
 }
 
 #pause {
-  border: 3px solid #d15e2b;
-  box-shadow: 0 0 10px #d15e2b;
+  border: 3px solid #D15E2B;
+  box-shadow: 0 0 10px #D15E2B;
 }
 
 #start:hover {
-  color: #28b741;
-  text-shadow: 0 0 10px #28b741;
+  color: #28B741;
+  text-shadow: 0 0 10px #28B741;
 }
 
 #pause:hover {
-  color: #d15e2b;
-  text-shadow: 0 0 10px #d15e2b;
+  color: #D15E2B;
+  text-shadow: 0 0 10px #D15E2B;
 }
 
 aside .history_container {
@@ -158,17 +152,17 @@ div.history_container div button {
   width: 15vh;
   height: 5vh;
   background-color: #222;
-  transition: 0.5s;
+  transition: .5s;
   border-radius: 5%;
   font-size: 1.2rem;
 }
 
 #reset_button {
-  color: #d15e2b;
+  color: #D15E2B;
 }
 
 #history_button {
-  color: #28b741;
+  color: #28B741;
 }
 
 #reset_button:hover {
@@ -183,7 +177,7 @@ div.history_container div button {
 
 #history_button:disabled {
   background-color: #555;
-  opacity: 0.2;
+  opacity: .2;
 }
 
 main {
@@ -204,19 +198,11 @@ div.screen {
 
 /* drawing numbers block - START */
 
-div.screen p.bigNumber,
-div.screen p.smallNumber,
-div.screen p.double,
-div.screen p.bull,
-div.screen p.triple {
+div.screen p.bigNumber, div.screen p.smallNumber, div.screen p.double, div.screen p.bull, div.screen p.triple {
   display: none;
 }
 
-div.screen p.bigNumber.visible,
-div.screen p.smallNumber.visible,
-div.screen p.double.visible,
-div.screen p.bull.visible,
-div.screen p.triple.visible {
+div.screen p.bigNumber.visible, div.screen p.smallNumber.visible, div.screen p.double.visible, div.screen p.bull.visible, div.screen p.triple.visible {
   display: initial;
   position: absolute;
   top: 10%;
@@ -225,11 +211,7 @@ div.screen p.triple.visible {
   font-size: 6rem;
 }
 
-div.screen p.bigNumber.visible.anim,
-div.screen p.smallNumber.visible.anim,
-div.screen p.double.visible.anim,
-div.screen p.bull.visible.anim,
-div.screen p.triple.visible.anim {
+div.screen p.bigNumber.visible.anim, div.screen p.smallNumber.visible.anim, div.screen p.double.visible.anim, div.screen p.bull.visible.anim, div.screen p.triple.visible.anim {
   animation: numberShowing 2s;
 }
 
@@ -257,13 +239,14 @@ div.screen p.triple.visible {
   font-size: 3rem;
 }
 
+
 /* drawing numbers block - END */
 
 .buttons {
   grid-column-start: 1;
   grid-column-end: 3;
   display: grid;
-  grid: 1fr 1fr / repeat(3, 1fr);
+  grid: 1fr 1fr/ repeat(3, 1fr);
   justify-self: center;
   align-self: center;
 }
@@ -280,11 +263,11 @@ div.screen p.triple.visible {
 }
 
 .buttons button.green {
-  box-shadow: 0 0 10px #28b741;
+  box-shadow: 0 0 10px #28B741;
 }
 
 .buttons button.red {
-  box-shadow: 0 0 10px #d15e2b;
+  box-shadow: 0 0 10px #D15E2B;
 }
 
 .buttons button:focus {
@@ -312,23 +295,21 @@ div.screen p.triple.visible {
   width: 1em;
   height: 1em;
   transform: translate(-50%, -50%);
-  background-image: radial-gradient(#28b741, #000);
+  background-image: radial-gradient(#28B741, #000);
   border-radius: 50%;
   z-index: 1;
-  transition: 0.3s;
+  transition: .3s;
 }
 
 .buttons button.score::before {
   width: 7vh;
   height: 7vh;
-  box-shadow: 0 0 5px #28b741;
+  box-shadow: 0 0 5px #28B741;
 }
 
-.buttons button:nth-child(4)::before,
-.buttons button:nth-child(5)::before,
-.buttons button:nth-child(6)::before {
-  background-image: radial-gradient(#d15e2b, #000);
-  box-shadow: 0 0 5px #d15e2b;
+.buttons button:nth-child(4)::before, .buttons button:nth-child(5)::before, .buttons button:nth-child(6)::before {
+  background-image: radial-gradient(#D15E2B, #000);
+  box-shadow: 0 0 5px #D15E2B;
 }
 
 footer {
@@ -345,13 +326,11 @@ footer a {
 
 /* modal */
 
-.modal_outer,
-.history_modal_outer {
+.modal_outer, .history_modal_outer {
   display: none;
 }
 
-.modal_outer.visible,
-.history_modal_outer.visible {
+.modal_outer.visible, .history_modal_outer.visible {
   display: initial;
   position: absolute;
   top: 0%;
@@ -359,12 +338,11 @@ footer a {
   width: 100%;
   height: 100%;
   background-color: #000;
-  opacity: 0.9;
+  opacity: .9;
   z-index: 2;
 }
 
-.modal_inner,
-.history_modal_inner {
+.modal_inner, .history_modal_inner {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 3fr;
@@ -377,7 +355,7 @@ footer a {
   bottom: 5%;
   border-radius: 4%;
   background-color: white;
-  opacity: 0.9;
+  opacity: .9;
   z-index: 3;
 }
 
@@ -390,18 +368,17 @@ footer a {
 .modal_inner p {
   font-size: 4rem;
   text-align: center;
-  color: #000;
+  color:#000;
   opacity: 1;
   align-items: center;
   justify-items: center;
 }
 
-.modal_inner p + p {
+.modal_inner p+p {
   font-size: 8rem;
 }
 
-.modal_inner button,
-.history_modal_inner button {
+.modal_inner button, .history_modal_inner button {
   margin-top: 30%;
   padding: 3px;
   width: 50%;
@@ -409,22 +386,21 @@ footer a {
   border-radius: 5%;
   justify-self: center;
   font-size: 2rem;
-  transition: 0.5s;
+  transition: .5s;
 }
 
 .history_modal_inner button {
   margin-top: 10%;
 }
 
-.modal_inner button:hover,
-.history_modal_inner button:hover {
+.modal_inner button:hover, .history_modal_inner button:hover {
   background-color: #222;
   color: white;
 }
 
 .history_modal_inner table {
   margin: 0 20px;
-  color: #000;
+  color:#000;
   font-size: 1.2rem;
   border: 1px solid black;
 }
@@ -441,7 +417,7 @@ table td {
   text-align: center;
 }
 
-table tr:nth-of-type(2n) {
+table tr:nth-of-type(2n){
   background-color: #ddd;
 }
 
@@ -463,8 +439,8 @@ table th {
   background-color: #555;
   border-radius: 5%;
   border: 2px solid #fff;
-  opacity: 0.3;
-  transition: 0.5s;
+  opacity: .3;
+  transition: .5s;
 }
 
 #help:hover {
@@ -483,11 +459,11 @@ table th {
   transform: translate(-50%, -50%);
   padding: 10px 10px 20px;
   background-color: #fff;
-  opacity: 0.9;
+  opacity: .9;
   border-radius: 5%;
   width: 80%;
   z-index: 4;
-  transition: 0.1s;
+  transition: .1s;
 }
 
 .hint.visible.second {
@@ -524,6 +500,7 @@ table th {
   padding: 25px;
 }
 
+
 .hint.visible p {
   font-size: 1.2rem;
   color: #000;
@@ -538,7 +515,7 @@ table th {
   border-radius: 0%;
   width: 30%;
   background-color: #ccc;
-  opacity: 0.8;
+  opacity: .8;
   color: #000;
   font-size: 1.2rem;
   border: 3px solid #000;
@@ -546,18 +523,16 @@ table th {
 
 @media (orientation: landscape) and (max-width: 1100px) {
   body {
-    max-width: 100%;
-    grid-template-columns: 2fr 1fr 1fr;
-    align-content: center;
+     max-width: 100%;
+     grid-template-columns: 2fr 1fr 1fr;
+     align-content: center;
   }
 
-  #start,
-  #pause {
+  #start, #pause {
     width: 15vh;
   }
 
-  #reset_button,
-  #history_button {
+  #reset_button, #history_button {
     width: 23vh;
     height: 7vh;
   }
@@ -606,8 +581,7 @@ table th {
 @keyframes numberShowing {
   0% {
     transform: scale(3) translateX(-10%);
-    text-shadow: 5px 5px 0 #d15e2b, -5px -5px 0 #d15e2b, 5px -5px 0 #28b741,
-      -5px 5px 0 #28b741;
+    text-shadow: 5px 5px 0 #D15E2B, -5px -5px 0 #D15E2B, 5px -5px 0 #28B741, -5px 5px 0 #28B741;
   }
   100% {
     transform: scale(1) translateX(-50%);
