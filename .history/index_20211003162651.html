@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Home | Dart Invader</title>
+    <meta name="description" content="The best place to improve your darts" />
+    <link rel="stylesheet" href="css/small.css" />
+    <meta
+      name="keywords"
+      content="dart, practice, dart practice, dart training"
+    />
+    <meta name="robots" content="index,follow" />
+
+    <!-- favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./img/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./img/favicon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./img/favicon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./img/favicon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./img/favicon/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./img/favicon/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./img/favicon/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./img/favicon/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./img/favicon/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./img/favicon/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./img/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./img/favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./img/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./img/favicon/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="./img/favicon/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+
+  <body>
+    <div class="dashboard">
+      <div class="modal_outer">
+        <div class="modal_inner">
+          <button class="modal_reset">reset</button>
+        </div>
+      </div>
+      <div class="history_modal_outer">
+        <div class="history_modal_inner">
+          <div class="table_container">
+            <table class="results"></table>
+          </div>
+          <button class="history_reset">zamknij</button>
+        </div>
+      </div>
+      <div class="hint">
+        <div class="text"></div>
+        <button class="next">dalej</button>
+      </div>
+      <main>
+        <div class="screen">
+          <p class="bigNumber"></p>
+          <p class="smallNumber"></p>
+          <p class="double"></p>
+          <p class="triple"></p>
+          <p class="bull"></p>
+        </div>
+      </main>
+      <div class="panel">
+        <header>
+          <h1>Dart <span>Invader</span></h1>
+        </header>
+        <aside>
+          <p class="timer"></p>
+          <div class="controllers">
+            <button class="start">start</button>
+            <button class="pause">pause</button>
+          </div>
+          <div class="history_container">
+            <div class="history">
+              <button class="history_button">historia</button>
+            </div>
+            <div class="reset">
+              <button class="reset_button">reset</button>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+    <div class="buttons">
+      <button class="first dart green"></button>
+      <button class="second dart green"></button>
+      <button class="third dart green"></button>
+      <button class="first dart red"></button>
+      <button class="second dart red"></button>
+      <button class="third dart red third"></button>
+    </div>
+    <footer>
+      <button id="help">pomoc</button
+      ><a href="mailto:przemoszadkowski@o2.pl">&copy;Przemysław Szadkowski</a>
+    </footer>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
